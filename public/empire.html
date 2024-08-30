@@ -2,7 +2,12 @@
 <html>
 
 <head><link rel="stylesheet" href="index.css">
-
+    <script>
+        function myFunction(id) {
+          // Get the text field
+          navigator.clipboard.writeText("https://dungeonmaster-wee-wee-53ff43089fcb49b0a2dd69bd42463cc15f20f598d.gitlab.io/empire.html#" + id);
+        }
+        </script>
 </head>
 
 <body>
@@ -29,7 +34,7 @@ user clicks on this button to copy the link and sends it elsewhere
     <div id="1">
         <img src=https://gitlab.com/wee-wee/photostorage/-/raw/main/pa51e2mfqtau4xkcxm__01.jpg?ref_type=heads&inline=false>
         <p>Детский дом, бывший дом купца Миллера рядом с нынешней станцией Пионерская, начало 20х</p>
-        <button onclick="navigator.clipboard.writeText("https://dungeonmaster-wee-wee-53ff43089fcb49b0a2dd69bd42463cc15f20f598d.gitlab.io/empire.html#1")">
+        <button onclick="myFunction(1)" >
             Copy text
         </button>
     </div>
