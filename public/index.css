@@ -8,3 +8,11 @@ p {
   font-family: courier;
   font-size: 160%;
 }
+.grade {
+  display:grid; 
+  grid-template: auto / 1fr 1fr 1fr;
+}
+.picture {
+max-width: 100%; 
+
+}
