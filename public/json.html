@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Animate a line</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
+    <title>Animate a line</title>
+    <meta property="og:description" content="Animate a line by updating a GeoJSON source on each frame." />
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.7.0/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@4.7.0/dist/maplibre-gl.js'></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body, #map { height: 100%; }
+    </style>
 </head>
 <body>
 <style>
     button {
         position: absolute;
+        top: 0;
         margin: 20px;
     }
 
@@ -29,17 +31,12 @@ body { margin: 0; padding: 0; }
 <div id="map"></div>
 <button id="pause"></button>
 <script>
-	// TO MAKE THE MAP APPEAR YOU MUST
-	// ADD YOUR ACCESS TOKEN FROM
-	// https://account.mapbox.com
-	mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
-    const map = new mapboxgl.Map({
+    const map = new maplibregl.Map({
         container: 'map',
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v12',
+        style:
+            'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
         center: [0, 0],
-        zoom: 0.5,
-        projection: 'equalEarth'
+        zoom: 0.5
     });
 
     // Create a GeoJSON source with an empty lineString.
@@ -134,6 +131,5 @@ body { margin: 0; padding: 0; }
         }
     });
 </script>
-
 </body>
 </html>
