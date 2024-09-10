@@ -47,18 +47,13 @@
 </div>
 
 <script>
-    const map = new maplibregl.Map({
-        container: 'map',
-        style: 'https://api.maptiler.com/maps/streets/style.json?key=qi2lqLtmvCDiZ8epFXyx',
-        center: [-96, 37.8],
-        zoom: 3
-    });
+
 
     // San Francisco
-    const origin = [48.809326, 44.612241];
+    const origin = [44.51589138755775,48.712369267537824];
 
     // Washington DC
-    const destination = [48.817070, 44.627393];
+    const destination = [44.51574654827099,48.71260889473117];
 
     // A simple line from origin to destination.
     const route = {
@@ -103,11 +98,11 @@
     // Draw an arc between the `origin` & `destination` of the two points
     for (let i = 0; i < lineDistance; i += lineDistance / steps) {
         const segment = turf.along(route.features[0], i, 'kilometers');
-        arc.push(segment.geometry.coordinates);
+        line.push(segment.geometry.coordinates);
     }
 
     // Update the route with calculated arc coordinates
-    route.features[0].geometry.coordinates = arc;
+    route.features[0].geometry.coordinates = line;
 
     // Used to increment the value of the point measurement against the route.
     let counter = 0;
