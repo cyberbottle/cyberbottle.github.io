@@ -114,8 +114,7 @@
                 geojson.features[0].geometry.coordinates = [];
             } else {
                 const x = progress / speedFactor;
-                // draw a sine wave with some math.
-                const y = Math.sin((x * Math.PI) / 90) * 40;
+                
                 // append new coordinates to the lineString
                 geojson.features[0].geometry.coordinates.push([x, y]);
                 // then update the map
