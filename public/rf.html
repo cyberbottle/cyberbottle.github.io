@@ -112,7 +112,41 @@
     // Used to increment the value of the point measurement against the route.
     let counter = 0;
 
-    
+    map.on('load', () => {
+        // Add a source and layer displaying a point which will be animated in a circle.
+        map.addSource('route', {
+            'type': 'geojson',
+            'data': route
+        });
+
+        map.addSource('point', {
+            'type': 'geojson',
+            'data': point
+        });
+
+        map.addLayer({
+            'id': 'route',
+            'source': 'route',
+            'type': 'line',
+            'paint': {
+                'line-width': 2,
+                'line-color': '#007cbf'
+            }
+        });
+
+        map.addLayer({
+            'id': 'point',
+            'source': 'point',
+            'type': 'symbol',
+            'layout': {
+                'icon-image': 'airport_15',
+                'icon-rotate': ['get', 'bearing'],
+                'icon-rotation-alignment': 'map',
+                'icon-overlap': 'always',
+                'icon-ignore-placement': true
+            }
+        });
+
         function animate() {
             // Update point geometry to a new position based on counter denoting
             // the index to access the arc.
