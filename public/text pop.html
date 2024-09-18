@@ -29,7 +29,14 @@
             'https://maplibre.org/maplibre-gl-js/docs/assets/popup_debug.png'
     };
 
+    map.on('load', async () => {
+        const debugPopup = await map.loadImage(images['popup-debug']);
+        const popup = await map.loadImage(images['popup']);
+        map.addImage('popup-debug', debugPopup.data, {
     
+            
+        });
+        
 
         map.addSource('points', {
             'type': 'geojson',
