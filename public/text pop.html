@@ -117,22 +117,7 @@
             }
         });
 
-        // the original, unstretched image for comparison
-        map.addSource('original', {
-            'type': 'geojson',
-            'data': {
-                'type': 'FeatureCollection',
-                'features': [
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [0, -70]
-                        }
-                    }
-                ]
-            }
-        });
+    
         map.addLayer({
             'id': 'original',
             'type': 'symbol',
