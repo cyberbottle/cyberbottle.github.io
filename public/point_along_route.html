@@ -105,28 +105,7 @@
         const segment = turf.along(route.features[0], i, 'kilometers');
         arc.push(segment.geometry.coordinates);
     }
-    map.addSource('points', {
-            'type': 'geojson',
-            'data': {
-                'type': 'FeatureCollection',
-                'features': 
-                [
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [44.51589138755775,48.712369267537824]
-                        },
-                        'properties': {
-                            'image-name': 'popup-debug',
-                            'name': 'остановка'
-                        }
-                    },
-                    
-                       
-                ]
-            }
-        });
+    
 
     // Update the route with calculated arc coordinates
     route.features[0].geometry.coordinates = arc;
