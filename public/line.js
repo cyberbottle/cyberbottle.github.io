@@ -130,6 +130,28 @@ map.on('load', () => {
       counter = counter + 1;
       // append new coordinates to the lineString
       geojsonAnimation.features[0].geometry.coordinates.push([x, y]);
+      map.addSource('points', {
+        'type': 'geojson',
+        'data': {
+            'type': 'FeatureCollection',
+            'features': 
+            [
+                {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [44.51589138755775,48.712369267537824]
+                    },
+                    'properties': {
+                        'image-name': 'popup-debug',
+                        'name': 'остановка'
+                    }
+                },
+                
+                   
+            ]
+        }
+    });
       // then update the map
       map.getSource('line').setData(geojsonAnimation);
     }
