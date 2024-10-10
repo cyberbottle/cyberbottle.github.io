@@ -8,6 +8,7 @@ import Line from "@/pages/line.vue";
 import PointAlongRoute from "@/pages/point_along_route.vue";
 import Sine from "@/pages/sine.vue";
 import TextPop2 from "@/pages/text_pop2.vue";
+import Cities from "@/pages/cities.vue";
 
 const routes = [
   { path: "/", component: Home, name: "home" },
