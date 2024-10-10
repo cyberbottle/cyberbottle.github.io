@@ -22,6 +22,7 @@ const routes = [
     name: "point_along_route",
   },
   { path: "/sine", component: Sine, name: "sine" },
+  { path: "/cities", component: Cities, name: "cities" },
   { path: "/text_pop2", component: TextPop2, name: "text_pop2" },
 ];
 
